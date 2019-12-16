@@ -242,11 +242,8 @@ class frontController extends Controller
     }
 
     public function getstatisticalItem(){
-        // $sql = "SELECT amount, SUM(amount) FROM order_detail GROUP BY item_id";
-       // $item = DB::select($sql);
-        $item = DB::table('order_detail')->groupBy('item_id')->sum('amount');    
-    dd($item);
-
+        $sql = 'select *,sum(amount) as total from order_detail INNER JOIN items ON item_id = items.id group by item_id order by total desc';
+        $item = DB::select($sql);  
         return view('admin.statisticalItem', compact('item'));
     }
 

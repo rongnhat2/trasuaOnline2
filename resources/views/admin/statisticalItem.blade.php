@@ -21,6 +21,7 @@
 			                <thead>
 			                	<tr>
 			                  		<th>Tên Mặt Hàng</th>
+			                  		<th>Đơn Giá</th>
 			                  		<th>Số Lượng Được Bán</th>
 			                	</tr>
 			                </thead>
@@ -28,7 +29,8 @@
 						         <?php foreach ($item as $value): ?>
 					         		<tr>
 							            <td><?php echo $value->name; ?></td>
-							            <td><?php echo $value->amount; ?></td>
+							            <td><?php echo $value->prices; ?></td>
+							            <td><?php echo $value->total; ?></td>
 						        	</tr>
 						        <?php endforeach ?>
 			                </tbody>
